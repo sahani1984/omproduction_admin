@@ -1,0 +1,52 @@
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+     <div class="container">
+    <a class="navbar-brand" routerLink="/dashboard">Om Production House</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" routerLink="/edit/home">Home</a>
+        </li>
+         <li class="nav-item dropdown" (click)="handleDropdown()" routerLinkActive="active">
+           <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-toggle="dropdown"
+             aria-haspopup="true">About Company</a>
+           <div class="dropdown-menu" [class.show]="openmenu" aria-labelledby="navbarDropdown">
+             <a class="dropdown-item" routerLink="/edit/about/company">Company Profile</a>
+              <div class="dropdown-divider"></div>
+             <a class="dropdown-item" routerLink="/edit/about/photo-gallery">Photo Gallery</a>
+             <div class="dropdown-divider"></div>
+             <a class="dropdown-item" routerLink="/edit/about/videos">Recent Videos</a>
+              <div class="dropdown-divider"></div>
+             <a class="dropdown-item" href="javascript:void(0)">Crews</a>
+           </div>
+         </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" routerLink="/edit/services">Services</a>
+        </li>
+       
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" routerLink="/edit/equipments">Equipments</a>
+        </li>
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="/edit/institute">Institute</a>
+          </li>
+           <li class="nav-item" routerLinkActive="active">
+             <a class="nav-link" routerLink="/edit/contact">Contact</a>
+           </li>
+      </ul>
+       <a (click)="logout()" href="javascript:void(0)"><i class="fa fa-sign-out"></i>&nbsp;Logout</a>
+      <!-- <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form> -->
+    </div>
+    </div>
+  </nav>
+  <div class="container">
+<router-outlet></router-outlet>
+</div>

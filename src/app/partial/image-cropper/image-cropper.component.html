@@ -1,0 +1,26 @@
+
+
+<h1 mat-dialog-title class="border-bottom pb-1">Image cropper</h1>
+<div mat-dialog-content>
+  <div class="cropper_dialog">  
+    <div class="row align-item-center">
+      <div class="col-md-6">
+        <image-cropper 
+        [imageChangedEvent]="imageChangedEvent" 
+        [maintainAspectRatio]="true" 
+        [aspectRatio]="5 / 3"
+        format="png" 
+        [resizeToWidth]="150"
+        (imageCropped)="imageCropped($event)" 
+        (cropperReady)="cropperReady()"
+        (loadImageFailed)="loadImageFailed()"></image-cropper>
+      </div>
+      <div class="col-md-6">
+        <img [src]="croppedImage" />
+      </div>
+    </div>
+  </div>
+</div>
+<div mat-dialog-actions class="d-flex w-100 border-top mt-2 justify-content-end">
+  <button (click)="cropImage()" color="primary" mat-button mat-dialog-close cdkFocusInitial>Crop</button>
+</div>

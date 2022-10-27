@@ -1,0 +1,14 @@
+<nav class="mt-4">
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+    <button (click)="showTabs('/edit/about/company', '1')" [class.active]="selectedIndex == '1'" class="nav-link"
+      type="button" role="tab" aria-controls="nav-home">Company Profile</button>
+       <button (click)="showTabs('/edit/about/photo-gallery', '2')" [class.active]="selectedIndex == '2'"
+         class="nav-link" type="button" role="tab" aria-controls="nav-home">Photo Gallery</button>
+        <button (click)="showTabs('/edit/about/videos', '3')" [class.active]="selectedIndex == '3'" class="nav-link"  type="button" role="tab" aria-controls="nav-home">Recent Videos</button>
+        <button [class.active]="selectedIndex == '4'" class="nav-link" type="button" role="tab" aria-controls="nav-home">Crews</button>
+
+   </div>
+</nav>
+<div class="tab-content py-3">  
+  <router-outlet></router-outlet>
+</div>
