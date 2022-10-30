@@ -18,10 +18,11 @@ export class CommonService {
   pushFileToStorage(fileupload:FileUpload, title:string):Observable<number>{
     const filePath:any= `${this.basePath}/${fileupload.file.name}`;
     const storageRef:any = this.storage.ref(filePath);
-    const uploadTask:any = this.storage.upload(filePath, fileupload.file);
+    const uploadTask:any = this.storage.upload(filePath, fileupload.file);   
     uploadTask.snapshotChanges().pipe(
       finalize(()=>{
         storageRef.getDownloadURL().subscribe((downloadURL:any) => {
+          console.log(downloadURL)
           fileupload.imageUrl = downloadURL;
           fileupload.name = Date.now()+'-' +fileupload.file.name;
           fileupload.title = title;

@@ -69,7 +69,8 @@ export class PhotoGalleryComponent implements OnInit {
     const file:any = this.selectedFiles.item(0);   
     const title: any = this.model.title;   
     //this.selectedFiles = undefined;
-    this.currentFileUpload = new FileUpload(file);      
+    this.currentFileUpload = new FileUpload(file);    
+    console.log(this.currentFileUpload.file);  
     this.commonService.pushFileToStorage(this.currentFileUpload, title).subscribe(
       percentage => {
         this.percentage = Math.round(percentage);
